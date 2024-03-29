@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.googlefont{
+    font-family: 'Muli', sans-serif;
+}
+
+.googlefontpoppins{
+    font-family: 'Poppins', sans-serif;
+    color: #041b25;
+}
+
+.color {
+    background-color: #014459;
+}
+.fontcolor{
+color: #014459;
+}
+
+.blink_me 
+    {
+        animation: blinker 1s infinite;
+    }
+      
+    @keyframes blinker {
+        from { opacity: 1.0; }
+        50% { opacity: 0.5; }
+        to { opacity: 1.0; }
+    }
+
+
+
