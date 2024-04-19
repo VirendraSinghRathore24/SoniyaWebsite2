@@ -49,7 +49,7 @@ function Footer() {
         </div>
         </div>
         </div>
-        <div class="text-base text-center border-t border-brColor pt-4 text-blue-600">Copyright © 2024 Soniya Pachauri. All Rights Reserved.</div>
+        <div class="text-lg text-center border-t border-brColor pt-4 text-blue-600">Made with ❤️ in India</div>
         </div>
         
     </footer>
