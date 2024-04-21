@@ -1,16 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Page1.css'
 import Slider from './Slider1'
 import Slider2 from './Slider2'
 import { Link } from 'react-router-dom'
 import Faq from './Faq'
 import ProgramCard from './ProgramCard'
+import "./HomePage.css"
 
 function HomePage() {
   const [isExpanded1, setExpanded1] = useState(false)
   const [isExpanded2, setExpanded2] = useState(false)
   const [isExpanded3, setExpanded3] = useState(false)
   const [isExpanded4, setExpanded4] = useState(false)
+
+  useEffect(() =>{
+    window.addEventListener('scroll', reveal);
+
+     function reveal(){
+      var reveals = document.querySelectorAll('.reveal')
+
+      for(var i = 0; i < reveals.length; i++)
+      {
+        var windowHeight = window.innerHeight;
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 90;
+
+
+        if(revealTop < windowHeight - revealPoint)
+        {
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.remove('active');
+        }
+      }
+     }
+  }, []);
 
   return (
     <div className=''>
@@ -41,7 +66,7 @@ function HomePage() {
             </div>
 </div>
 
-            <div className=''>
+            <div className='reveal'>
               <img src='../../images/soniya5.png' loading='lazy' alt='profile' className='w-[300px] h-[340px] rounded-xl mt-8'/>
             </div>
         </div>
@@ -50,11 +75,11 @@ function HomePage() {
           <div>
             
             <div>
-            <div className='color'>
+            <div className='color reveal'>
             <div className='text-center mt-8 font-bold text-3xl sm:text-6xl leading-12 text-white p-4 blink_me'>
                Upcoming Session
             </div>
-        <div className='flex flex-wrap gap-x-8  gap-y-8 w-10/12 py-8 justify-evenly mx-auto googlefontpoppins text-white'>
+        <div className='flex flex-wrap gap-x-8  gap-y-8 w-10/12 py-8 justify-evenly mx-auto googlefontpoppins text-white '>
             <div className='flex flex-col w-full sm:w-8/12 gap-y-6 mx-auto text-center sm:text-left'>
                 <div className='flex flex-col gap-y-2'>
                     <div className='text-3xl sm:text-4xl text-orange-300 font-bold text-center'>Healing and Self Transformation:</div>
@@ -79,15 +104,16 @@ function HomePage() {
         </div>
           </div>
 
-
+          <div className='reveal'>
         <div className='text-3xl leading-12 mx-auto flex justify-center text-center w-10/12 text-blue-600 font-semibold mt-10 py-8'>Healing Sessions & Coaching</div>
         <div className='w-10/12 mx-auto flex flex-wrap justify-evenly gap-y-16 gap-x-4 mb-10 mt-8'>
           <ProgramCard url={'healing-self-transformation'} imageUrl={'../../images/img5.jpg'} title={"Healing and Self Transformation"}/>   
           <ProgramCard url={'life-coaching'} imageUrl={'../../images/img4.jpg'} title={"Life Coaching"}/>
           <ProgramCard url={'reiki-inner-child-healing'} imageUrl={'../../images/img7.jpg'} title={"Reiki and Inner Child Healing"}/>
         </div>
+        </div>
 
-       <div className='bg-stone-50 mt-10 py-8'>
+       <div className='bg-stone-50 mt-10 py-8 reveal'>
        <div className='text-3xl leading-12 mx-auto flex flex-wrap justify-center text-left w-10/12 fontcolor font-semibold '>Practice Book</div>
         <div className='flex flex-wrap w-10/12 justify-evenly gap-y-6 mx-auto mt-2'>
             <div className='flex flex-col lg:w-8/12 xs:w-screen items-start'>
@@ -109,7 +135,7 @@ function HomePage() {
             </Link>
         </div>
        
-        <div className='color mt-10'>
+        <div className='color mt-10 reveal'>
           <div className='w-10/12 mx-auto flex justify-center p-2 text-white text-2xl text-center googlefontpoppins'>People are getting amazing results</div>
             <div className='w-10/12 mx-auto grid xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 3xl:grid-cols-5 place-items-center gap-y-4 gap-x-2 mb-10 p-2'>
             <div className='flex flex-col items-center text-white gap-y-2 p-2'>
@@ -132,7 +158,7 @@ function HomePage() {
             </div>
           </div>
 
-        <div className='bg-gradient-to-r from-stone-50 to-blue-50'>
+        <div className='bg-gradient-to-r from-stone-50 to-blue-50 reveal'>
         <div id='testimonials' className=' mt-10 py-8'>
         <div className='text-3xl leading-12 mx-auto flex justify-center text-left w-10/12 fontcolor font-semibold '>Testimonials</div>
           <Slider />
@@ -141,7 +167,7 @@ function HomePage() {
 
 
         <div>
-          <div className='w-10/12 mx-auto text-2xl py-8 mt-10'>
+          <div className='w-10/12 mx-auto text-2xl py-8 mt-10 reveal'>
             <div className='xs:text-xl sm:text-xl md:text-3xl uppercase text-red-700 flex justify-center gap-x-2 font-bold '>Posts at <span class='text-green-700'>Instagram</span></div>
             <div className='mt-14'>
               <Slider2/>
@@ -150,7 +176,7 @@ function HomePage() {
           </div>
           </div>
 </div>
-          <div id='faq' className='w-10/12 mx-auto py-8 flex flex-col gap-y-4 mt-10'>
+          <div id='faq' className='w-10/12 mx-auto py-8 flex flex-col gap-y-4 mt-10 reveal'>
             <div className='text-3xl font-extrabold googlefontpoppins flex justify-center text-center'>Frequently asked questions</div>
             <div className='border-b-2 border-stone-200 mt-8'></div>
               <Faq isExpanded={isExpanded1} setExpanded={setExpanded1} isLastFaq={false} title={"How many days program required for complete healing?"} desc={"You need to keep practicing life."}/>
