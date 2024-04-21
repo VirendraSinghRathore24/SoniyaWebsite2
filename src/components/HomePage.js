@@ -66,7 +66,7 @@ function HomePage() {
             </div>
 </div>
 
-            <div className='reveal'>
+            <div className=''>
               <img src='../../images/soniya5.png' loading='lazy' alt='profile' className='w-[300px] h-[340px] rounded-xl mt-8'/>
             </div>
         </div>
@@ -75,7 +75,7 @@ function HomePage() {
           <div>
             
             <div>
-            <div className='color reveal'>
+            <div className='color '>
             <div className='text-center mt-8 font-bold text-3xl sm:text-6xl leading-12 text-white p-4 blink_me'>
                Upcoming Session
             </div>
