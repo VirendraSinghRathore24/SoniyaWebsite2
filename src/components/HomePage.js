@@ -135,24 +135,24 @@ function HomePage() {
             </Link>
         </div>
        
-        <div className='color mt-10 reveal'>
-          <div className='w-10/12 mx-auto flex justify-center p-2 text-white text-2xl text-center googlefontpoppins'>People are getting amazing results</div>
+        <div className='color mt-10 shadow-xl reveal'>
+          <div className='w-10/12 mx-auto flex justify-center p-6 text-white text-3xl text-center googlefontpoppins'>People are getting amazing results</div>
             <div className='w-10/12 mx-auto grid xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 3xl:grid-cols-5 place-items-center gap-y-4 gap-x-2 mb-10 p-2'>
-            <div className='flex flex-col items-center text-white gap-y-2 p-2'>
+            <div className='flex flex-col items-center text-white gap-y-2 p-4'>
               <div className='text-3xl googlefontpoppins text-white'>Healed</div>
-              <div className='text-3xl font-extrabold text-orange-300'>1000+</div>
+              <div className='text-5xl font-extrabold text-orange-300'>1000+</div>
               <div className='text-md googlefontpoppins text-white text-center'>People into healing their deepest inner blocks</div>
             </div>
             <div className='border-r-2 border-white h-full '></div>
-            <div className='flex flex-col items-center text-white gap-y-2 p-2'>
+            <div className='flex flex-col items-center text-white gap-y-2 p-4'>
             <div className='text-3xl googlefontpoppins text-white'>Taken</div>
-              <div className='text-3xl font-extrabold text-orange-300'>500+</div>
+              <div className='text-5xl font-extrabold text-orange-300'>500+</div>
               <div className='text-md googlefontpoppins text-white text-center'>LIVE sessions for Reiki & Chakra Healing</div>
             </div>
             <div className='border-r-2 border-white h-full '></div>
-            <div className='flex flex-col items-center text-white gap-y-2 p-2'>
+            <div className='flex flex-col items-center text-white gap-y-2 p-4'>
               <div className='text-3xl googlefontpoppins text-white text-center'>Countless</div>
-              <div className='text-2xl font-extrabold text-orange-300'>RESULTS</div>
+              <div className='text-5xl font-extrabold text-orange-300'>RESULTS</div>
               <div className='text-md googlefontpoppins text-white text-center'>Inspired actions taken every day to massively impact the collective</div>
             </div>
             </div>

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import baseUrl from '../baseUrl';
 import { toast } from "react-toastify";
 import { useLocation } from 'react-router-dom';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../config/firebase';
 
 function Contact() 
 {
@@ -13,8 +15,7 @@ function Contact()
     name: '',
     mobile: '',
     email: '',
-    message: '',
-    session: ''
+    message: ''
   });
 
   const handleInputChange = (event) => {
@@ -25,17 +26,39 @@ function Contact()
     }));
   };
 
+  const contactCollectionRef = collection(db, "contact");
+  
+  const addContactData = async () => 
+  {
+      try
+      {
+        await addDoc(contactCollectionRef, {
+          name: formData.name, 
+          mobile : formData.mobile, 
+          email: formData.email, 
+          message: formData.message,
+          isReplied:false
+        });
+      }
+      catch(err) 
+      {
+        console.log(err);
+      }
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     try{
-    const postData = new FormData();
-    postData.append('name', formData.name);
-    postData.append('mobile', formData.mobile);
-    postData.append('email', formData.email);
-    postData.append('message', formData.message);
-    postData.append('session', session);
+    // const postData = new FormData();
+    // postData.append('name', formData.name);
+    // postData.append('mobile', formData.mobile);
+    // postData.append('email', formData.email);
+    // postData.append('message', formData.message);
+    // postData.append('session', 'Contact Us');
 
-    axios.post(`${baseUrl}/contactuser`, formData);
+    addContactData();
+
+    //axios.post(`${baseUrl}/contactuser`, formData);
     //axios.post(`${baseUrl}/sendemail`, formData);
     
     toast.success(`Thank you ${formData.name} for your details, We will get back to you soon, Stay connected !!!`, {position: "top-center"});
@@ -77,7 +100,7 @@ function Contact()
             <div>
                 <label for="message" class="pb-1 text-xs uppercase tracking-wider"></label><textarea id="message" value={formData.message} onChange={handleInputChange} name="message" cols="30" rows="5" placeholder="Write your message..." class="mb-2 w-80 rounded-md border py-2 pl-2 pr-4 shadow-md  sm:mb-0"></textarea>
             </div>
-            <div className='text-md'>Disclaimer : You will receive a call shortly !!!</div>
+            {/* <div className='text-md'>Disclaimer : You will receive a call shortly !!!</div> */}
             <div>
                 <button type="submit" class="w-80 bg-blue-800 text-white px-6 py-3 font-xl rounded-md sm:mb-0">Submit</button>
             </div>

@@ -27,8 +27,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		//origin:"http://localhost:3000",
-		origin:"https://soniya1.netlify.app",
+		origin:"http://localhost:3000",
+		//origin:"https://soniya1.netlify.app",
 		credentials:true,
 	})
 )
