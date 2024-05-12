@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ReactGA from "react-ga";
 import Hoponopono from "./components/Hoponopono";
+import Login from "./components/admin/Login";
 
 const TRACKING_ID = "G-JR6JPL6HN4";
 ReactGA.initialize(TRACKING_ID);
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/life-lessions/hooponopono-forgiveness" element={<Hoponopono/>}/>
           <Route path="/faq" element={<FaqPage/>}/>
           <Route path="/admin/contacts" element={<Contacts/>}/>
+          <Route path="/admin/login" element={<Login/>}/>
           <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       <ToastContainer/>

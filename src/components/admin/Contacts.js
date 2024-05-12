@@ -6,9 +6,12 @@ import { db } from '../../config/firebase';
 import ReactModal from 'react-modal';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 function Contacts() {
+    const navigate = useNavigate();
+
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -76,6 +79,14 @@ function Contacts() {
     }
 
     useEffect(() => {
+      
+       const auth = localStorage.getItem("auth");
+
+        if(auth !== "Logged In")
+        {
+          navigate("/admin/login");
+        }
+      
         window.scroll(0,0);
         fetchBlogsData();
       }, []);
@@ -159,9 +170,6 @@ function Contacts() {
                   <button onClick={handleSendEmail} className='text-lg bg-green-500 px-10 py-1 text-white rounded-lg'>Send</button>
                 </div>
         </ReactModal>
-        {
-          loading ? <div className='absolute top-1/2  left-1/2 '><Spinner/></div> : <></>
-        }
     </div>
   )
 }
