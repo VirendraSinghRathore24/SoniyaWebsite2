@@ -90,6 +90,8 @@ function Contacts() {
         window.scroll(0,0);
         fetchBlogsData();
       }, []);
+     
+      
 
   return (
     <div className='py-10 mb-40'>
@@ -135,7 +137,7 @@ function Contacts() {
        <ReactModal isOpen={isOpen}
                     contentLabel="Example Modal"
                     onRequestClose={() => setIsOpen(false)} 
-                    className='relative w-11/12 md:w-4/12 mx-auto flex flex-col shadow-lg rounded-lg items-center gap-y-4 p-4 mt-40 bg-gray-300 border-blue-600 border-2'>
+                    className='w-11/12 md:w-4/12 mx-auto flex flex-col shadow-lg rounded-lg items-center gap-y-4 p-4 mt-4 bg-gray-300 border-blue-600 border-2 overflow-scroll'>
                     <div className='flex justify-between text-2xl w-full'>
                         <div className='flex justify-center w-full'>
                           <div className='text-center font-bold text-blue-600'>Send Email</div>
@@ -145,18 +147,18 @@ function Contacts() {
                     <div class="flex items-center mx-auto text-center border-t border-green-600 pt-4 w-full"></div>
                     <div className='flex justify-start gap-x-4 mt-[10px] w-full mx-auto'>
                         
-                            <div className='text-lg text-richblack-700 '>Name :</div>
+                            <div className='text-lg text-richblack-700 '>Name</div>
                             <div className='text-lg text-blue-600  ml-5'>{name}</div>
                            
                     </div>
                     <div className='flex justify-start gap-x-4  w-full mx-auto'>
                         
-                        <div className='text-lg text-richblack-700  '>To :</div>
-                        <div className='text-lg text-blue-600  ml-12'>{email}</div>
+                        <div className='text-lg text-richblack-700'>To</div>
+                        <div className='text-lg text-blue-600 ml-1 md:ml-12 text-wrap'>{email}</div>
                 </div>
                 <div className='flex justify-start gap-x-4  w-full mx-auto'>
                         
-                        <div className='text-lg text-richblack-700  '>Message :</div>
+                        <div className='text-lg text-richblack-700  '>Message</div>
                         <div className='text-lg text-blue-600  '>{message}</div>
                    
                 </div>
