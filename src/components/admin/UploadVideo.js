@@ -3,8 +3,10 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import React, { useEffect, useState } from 'react'
 import { db, storage } from '../../config/firebase';
 import Spinner from '../Spinner';
+import { useNavigate } from 'react-router-dom';
 
 const UploadVideo = () => {
+    const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
@@ -142,6 +144,14 @@ const UploadVideo = () => {
 }
 
 useEffect(() => {
+    const auth = localStorage.getItem("auth");
+
+        if(auth !== "Logged In")
+        {
+          navigate("/admin/login");
+        }
+      
+        window.scroll(0,0);
     getVideo();
 }, []);
   return (

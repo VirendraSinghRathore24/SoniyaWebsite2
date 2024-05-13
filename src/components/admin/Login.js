@@ -30,7 +30,7 @@ const Login = () => {
             if(existingCode.includes(code))
             {
                 localStorage.setItem("auth", "Logged In");
-                navigate('/admin/contacts');
+                navigate('/admin/dashboard');
             }
             else
             {

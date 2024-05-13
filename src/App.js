@@ -18,6 +18,7 @@ import Hoponopono from "./components/Hoponopono";
 import Login from "./components/admin/Login";
 import UploadVideo from "./components/admin/UploadVideo";
 import WritingBook from "./components/WritingBook";
+import Dashboard from "./components/admin/Dashboard";
 
 const TRACKING_ID = "G-JR6JPL6HN4";
 ReactGA.initialize(TRACKING_ID);
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/faq" element={<FaqPage/>}/>
           <Route path="/admin/contacts" element={<Contacts/>}/>
           <Route path="/admin/login" element={<Login/>}/>
+          <Route path="/admin/dashboard" element={<Dashboard/>}/>
           <Route path="/admin/uploadvideo" element={<UploadVideo/>}/>
           <Route path="*" element={<PageNotFound/>}/>
       </Routes>
