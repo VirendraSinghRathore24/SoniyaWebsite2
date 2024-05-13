@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Faq from './Faq'
 import ProgramCard from './ProgramCard'
 import "./HomePage.css"
+import Book from './Book'
 
 function HomePage() {
   const [isExpanded1, setExpanded1] = useState(false)
@@ -71,10 +72,10 @@ function HomePage() {
             </div>
         </div>
         </div>
-
+        <div className='mt-10 py-8 color'><Book/></div>
           <div>
             
-            <div>
+            {/* <div>
             <div className='color '>
             <div className='text-center mt-8 font-bold text-3xl sm:text-6xl leading-12 text-white p-4 blink_me'>
                Upcoming Session
@@ -96,12 +97,10 @@ function HomePage() {
                   </Link>
                </div>
             </div>
-            {/* <div className=''>
-                <img src='../../images/img6.jpg' loading='lazy' alt='profile' className='w-[300px] h-[380px] rounded-xl '/>
-            </div> */}
+   
         </div>
         </div>
-        </div>
+        </div> */}
           </div>
 
           <div className='reveal'>

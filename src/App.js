@@ -16,6 +16,8 @@ import { ToastContainer } from "react-toastify";
 import ReactGA from "react-ga";
 import Hoponopono from "./components/Hoponopono";
 import Login from "./components/admin/Login";
+import UploadVideo from "./components/admin/UploadVideo";
+import WritingBook from "./components/WritingBook";
 
 const TRACKING_ID = "G-JR6JPL6HN4";
 ReactGA.initialize(TRACKING_ID);
@@ -30,6 +32,7 @@ export default function App() {
           <Route path="/aboutus" element={<AboutUS/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/sessions" element={<Sessions/>}/>
+          <Route path="/book/writingbook" element={<WritingBook/>}/>
           <Route path="/sessions/reiki-inner-child-healing" element={<ReikiAndICHPage/>}/>
           <Route path="/sessions/healing-self-transformation" element={<SelfTransform/>}/>
           <Route path="/sessions/life-coaching" element={<LifeCoaching/>}/>
@@ -37,6 +40,7 @@ export default function App() {
           <Route path="/faq" element={<FaqPage/>}/>
           <Route path="/admin/contacts" element={<Contacts/>}/>
           <Route path="/admin/login" element={<Login/>}/>
+          <Route path="/admin/uploadvideo" element={<UploadVideo/>}/>
           <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       <ToastContainer/>
