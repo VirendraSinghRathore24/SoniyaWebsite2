@@ -2,11 +2,13 @@ import { collection, getDocs } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { db } from '../../config/firebase';
 import Spinner from '../Spinner';
+import { useNavigate } from 'react-router-dom';
 
 const PDFUsers = () => {
 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const userCollectionRef = collection(db, "PdfUsers");
 
@@ -27,6 +29,12 @@ const PDFUsers = () => {
     } 
 
     useEffect(()=> {
+        const auth = localStorage.getItem("auth");
+        if(auth !== "Logged In")
+        {
+            navigate("/admin/login");
+        }
+        
         getCategory();
     },[]);
 
