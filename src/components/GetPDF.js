@@ -84,6 +84,7 @@ const GetPDF = () => {
                 <input
                     className='border-2 rounded-md py-3 w-full px-2 text-md'
                     required
+                    type='email'
                     name='email'
                     placeholder='Enter your email'
                     value={formData.email}
