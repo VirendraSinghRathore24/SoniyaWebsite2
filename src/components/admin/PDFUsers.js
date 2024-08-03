@@ -34,7 +34,7 @@ const PDFUsers = () => {
         {
             navigate("/admin/login");
         }
-        
+
         getCategory();
     },[]);
 
@@ -57,6 +57,7 @@ const PDFUsers = () => {
                             <th scope="col" className="px-1 py-2 border-r-2 text-center">#</th>
                             <th scope="col" className="px-1 py-2 border-r-2 text-center">Name</th>
                             <th scope="col" className="px-1 py-2  text-center border-r-2" >Email</th>
+                            <th scope="col" className="px-1 py-2  text-center border-r-2" >Login Mode</th>
                         </tr>
                     </thead>
                     <tbody className='py-4'>
@@ -67,6 +68,7 @@ const PDFUsers = () => {
                             <td className="whitespace-wrap text-[12px] font-medium px-1 py-2 border-r-2  align-baseline text-center text-wrap">{index+1}</td>
                             <td className="whitespace-wrap text-md font-medium px-1 py-2 border-r-2 align-baseline text-center text-wrap">{p.name}</td>
                             <td className="whitespace-wrap text-md font-medium px-1 py-2 border-r-2 align-baseline text-center text-wrap">{p.email}</td>
+                            <td className="whitespace-wrap text-md font-medium px-1 py-2 border-r-2 align-baseline text-center text-wrap">{p.loginmode}</td>
                         </tr>))     
                     } 
                     </tbody> 

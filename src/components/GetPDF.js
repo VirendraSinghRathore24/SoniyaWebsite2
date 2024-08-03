@@ -28,7 +28,8 @@ const GetPDF = () => {
 
             await addDoc(userCollectionRef, {
                 name : auth?.currentUser?.displayName,
-                email : auth?.currentUser?.email
+                email : auth?.currentUser?.email,
+                loginmode : 'Google'
               });
 
             setIsAdded(true);
@@ -44,7 +45,8 @@ const GetPDF = () => {
 
             await addDoc(userCollectionRef, {
                 name : formData.name,
-                email : formData.email
+                email : formData.email,
+                loginmode : 'Manual'
               });
 
               setIsAdded(true);
@@ -96,15 +98,15 @@ const GetPDF = () => {
         </div>
         ) : (
             <div className='flex flex-col items-center'>
-            <h2 className='text-xl font-semibold'>Get Hoponopono PDF</h2>
+            <h2 className='text-xl font-semibold'>Get Self-Forgiveness Prayer</h2>
             <div >
                 <a 
-                    href="/10 Month Baby Food Recipe.pdf"
-                    download="10 Month Baby Food Recipe"
+                    href="/Self Forgiveness Prayer.png"
+                    download="Self Forgiveness Prayer"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <button className='bg-[#146eb4] px-6 py-2 text-white rounded-md text-md md:text-lg mt-4 w-full'>Click here to Download the PDF</button>
+                    <button className='bg-[#146eb4] px-6 py-2 text-white rounded-md text-md md:text-lg mt-4 w-full'>Click here to Download the Prayer</button>
                 </a>
             </div>
         </div>

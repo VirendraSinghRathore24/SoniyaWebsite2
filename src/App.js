@@ -45,7 +45,7 @@ export default function App() {
           <Route path="/admin/login" element={<Login/>}/>
           <Route path="/admin/dashboard" element={<Dashboard/>}/>
           <Route path="/admin/uploadvideo" element={<UploadVideo/>}/>
-          <Route path="/pdf" element={<GetPDF/>}/>
+          <Route path="/self-forgiveness-prayer" element={<GetPDF/>}/>
           <Route path="/admin/pdfusers" element={<PDFUsers/>}/>
           <Route path="*" element={<PageNotFound/>}/>
       </Routes>
