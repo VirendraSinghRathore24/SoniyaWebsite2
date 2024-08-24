@@ -21,6 +21,8 @@ import WritingBook from "./components/WritingBook";
 import Dashboard from "./components/admin/Dashboard";
 import GetPDF from "./components/GetPDF";
 import PDFUsers from "./components/admin/PDFUsers";
+import AffirmationsPDF from "./components/AffirmationsPDF";
+import AffirmationUsers from "./components/admin/AffirmationUsers";
 
 const TRACKING_ID = "G-JR6JPL6HN4";
 ReactGA.initialize(TRACKING_ID);
@@ -46,7 +48,9 @@ export default function App() {
           <Route path="/admin/dashboard" element={<Dashboard/>}/>
           <Route path="/admin/uploadvideo" element={<UploadVideo/>}/>
           <Route path="/self-forgiveness-prayer" element={<GetPDF/>}/>
+          <Route path="/kalyug-mantra-power-of-affirmation" element={<AffirmationsPDF/>}/>
           <Route path="/admin/pdfusers" element={<PDFUsers/>}/>
+          <Route path="/admin/affimationusers" element={<AffirmationUsers/>}/>
           <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       <ToastContainer/>
