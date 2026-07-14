@@ -42,7 +42,7 @@ export default function BookSalePage() {
     title: "HO'OPONOPONO: The Art of Forgiveness",
     author: "Soniya Pachauri",
     price: bookPrice, // In INR
-    image: "../../images/book.png",
+    image: "../../images/book.webp",
     description:
       "The Healing Power of Forgiveness, Inner Peace & Self - Transformation with Forgiveness - A Prayer Guide, Release the past. Heal your heart, Transform your life.",
   };
