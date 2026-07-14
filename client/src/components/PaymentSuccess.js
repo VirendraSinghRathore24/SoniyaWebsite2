@@ -13,9 +13,6 @@ import { useLocation } from "react-router-dom";
 const PaymentSuccess = () => {
   const location = useLocation();
   const paymentData = location.state;
-  if (!paymentData) {
-    return <Navigate to="/" replace />;
-  }
 
   // Destructure the properties from the state securely
   const { name, mobile, email, address, transactionId, date, amount } =
