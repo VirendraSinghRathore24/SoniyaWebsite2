@@ -24,6 +24,9 @@ import PDFUsers from "./components/admin/PDFUsers";
 import AffirmationsPDF from "./components/AffirmationsPDF";
 import AffirmationUsers from "./components/admin/AffirmationUsers";
 import BookLandingPage from "./components/BookLandingPage";
+import BookSalePage from "./components/BookSalePage";
+import PaymentSuccess from "./components/PaymentSuccess";
+import CustomersDashboard from "./components/admin/CustomersDashboard";
 
 const TRACKING_ID = "G-JR6JPL6HN4";
 ReactGA.initialize(TRACKING_ID);
@@ -42,6 +45,7 @@ export default function App() {
           path="/sessions/reiki-inner-child-healing"
           element={<ReikiAndICHPage />}
         />
+        <Route path="/book" element={<BookSalePage />} />
         <Route
           path="/sessions/healing-self-transformation"
           element={<SelfTransform />}
@@ -64,6 +68,12 @@ export default function App() {
         <Route path="/admin/pdfusers" element={<PDFUsers />} />
         <Route path="/admin/affimationusers" element={<AffirmationUsers />} />
         <Route path="/book" element={<BookLandingPage />} />
+        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
+        <Route
+          path="/admin/customerdashboard"
+          element={<CustomersDashboard />}
+        />
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <ToastContainer />
