@@ -76,6 +76,7 @@ const CustomersDashboard = () => {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const authStatus = localStorage.getItem("auth");
     if (authStatus !== "Logged In") {
       window.location.href = "/login"; // Redirect to login page if not logged in
@@ -87,11 +88,6 @@ const CustomersDashboard = () => {
       <div className="text-center p-10 text-gray-500">Loading payments...</div>
     );
   }
-
-  useEffect(() => {
-    // Scroll to top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50/50 p-6 sm:p-10 antialiased font-sans">
