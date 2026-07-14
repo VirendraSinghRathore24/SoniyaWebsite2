@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import baseUrl from "../baseUrl";
 import { addDoc, collection } from "firebase/firestore";
@@ -26,7 +26,7 @@ export default function BookSalePage() {
         address: shippingInfo.address,
         quantity: quantity,
         transaction_id: response.razorpay_payment_id,
-        amount: book.price * quantity,
+        amount: bookPrice,
         date: new Date().toISOString(),
       });
     } catch (err) {
@@ -105,7 +105,7 @@ export default function BookSalePage() {
             address: shippingInfo.address,
             transactionId: response.razorpay_payment_id,
             date: new Date().toISOString(),
-            amount: bookPrice * quantity,
+            amount: bookPrice,
           },
         });
       },
@@ -142,6 +142,10 @@ export default function BookSalePage() {
     setBookPrice(1 * quantity); // Update the price based on quantity
   }, [quantity]);
 
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 antialiased">
       {/* Product Card */}
