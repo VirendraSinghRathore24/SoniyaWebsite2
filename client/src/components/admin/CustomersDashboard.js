@@ -269,7 +269,7 @@ const CustomersDashboard = () => {
                           {customer.name}
                         </h4>
                         <span className="text-xs text-gray-400">
-                          {customer.paymentDate}
+                          {customer.date}
                         </span>
                       </div>
                     </div>
@@ -301,11 +301,11 @@ const CustomersDashboard = () => {
                     <span className="text-gray-500">
                       Qty:{" "}
                       <strong className="text-gray-800">
-                        {customer.totalQuantity}
+                        {customer.quantity}
                       </strong>
                     </span>
                     <span className="font-extrabold text-gray-900">
-                      ₹{customer.amountPaid}
+                      ₹{customer.amount}
                     </span>
                   </div>
                 </div>

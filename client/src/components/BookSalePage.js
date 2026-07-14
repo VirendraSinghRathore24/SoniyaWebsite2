@@ -93,19 +93,6 @@ export default function BookSalePage() {
       image: "/logo.png",
       order_id: order.data.id,
       handler: function (response) {
-        // update login db with plan details
-        // get updated end date
-        // const nextDate = getNextDate(plan.name);
-        // updatePaymentHistoryData(plan.name, response, nextDate);
-
-        // // update cache
-        // localStorage.setItem("isFreePlan", false);
-        // localStorage.setItem("subscription", plan.name);
-        // localStorage.setItem(
-        //   "subStartDate",
-        //   new Date().toISOString().slice(0, 10)
-        // );
-        console.log("Payment successful:", response);
         addContactData(response);
         sendEmailConfirmation(response);
 

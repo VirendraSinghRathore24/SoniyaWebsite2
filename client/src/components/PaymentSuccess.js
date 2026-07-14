@@ -8,16 +8,18 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-const PaymentSuccess = ({
-  name,
-  mobile,
-  email,
-  address,
-  transactionId,
-  date,
-  amount,
-}) => {
+const PaymentSuccess = () => {
+  const location = useLocation();
+  const paymentData = location.state;
+  if (!paymentData) {
+    return <Navigate to="/" replace />;
+  }
+
+  // Destructure the properties from the state securely
+  const { name, mobile, email, address, transactionId, date, amount } =
+    paymentData;
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-4 antialiased">
       {/* Success Card Wrapper */}
