@@ -17,6 +17,7 @@ const PaymentSuccess = () => {
   // Destructure the properties from the state securely
   const { name, mobile, email, address, transactionId, date, amount } =
     paymentData;
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-4 antialiased">
       {/* Success Card Wrapper */}
@@ -144,7 +145,7 @@ const PaymentSuccess = () => {
           {email && (
             <div className="bg-green-50/50 border border-green-100 rounded-xl p-3 text-xs text-green-700 text-center mt-4">
               A receipt and order details have been sent to <br />
-              <strong className="text-green-800">{email}</strong>
+              <strong className="text-green-800">{email}</strong> by Razorpay.
             </div>
           )}
         </div>

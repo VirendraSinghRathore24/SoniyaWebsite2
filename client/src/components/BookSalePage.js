@@ -105,14 +105,13 @@ export default function BookSalePage() {
             address: shippingInfo.address,
             transactionId: response.razorpay_payment_id,
             date: new Date().toISOString(),
-            amount: book.price * quantity,
+            amount: bookPrice * quantity,
           },
         });
       },
       prefill: {
         name: shippingInfo.name,
         email: shippingInfo.email,
-        //contact: "8095528424",
       },
       theme: {
         color: "#3399cc",
