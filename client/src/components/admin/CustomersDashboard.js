@@ -221,7 +221,7 @@ const CustomersDashboard = () => {
                       {/* Address */}
                       <td className="px-6 py-5 max-w-xs">
                         <span className="text-gray-600 line-clamp-2 leading-relaxed">
-                          {customer.address}
+                          {customer.address} - {customer.pincode}
                         </span>
                       </td>
 
@@ -292,7 +292,7 @@ const CustomersDashboard = () => {
                     <div className="flex items-start gap-2">
                       <MapPin className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />
                       <span className="leading-relaxed">
-                        {customer.address}
+                        {customer.address} - {customer.pincode}
                       </span>
                     </div>
                   </div>
