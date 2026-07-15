@@ -44,7 +44,7 @@ export default function BookSalePage() {
     }
   };
 
-  const [bookPrice, setBookPrice] = useState(1);
+  const [bookPrice, setBookPrice] = useState(1699);
 
   const navigate = useNavigate();
   // Dummy Book Details
@@ -149,7 +149,7 @@ export default function BookSalePage() {
   };
 
   useEffect(() => {
-    setBookPrice(1 * quantity); // Update the price based on quantity
+    setBookPrice(1699 * quantity); // Update the price based on quantity
   }, [quantity]);
 
   useEffect(() => {
@@ -256,10 +256,10 @@ export default function BookSalePage() {
                   ₹{book.price}
                 </span>
                 <span className="text-sm text-gray-400 line-through">
-                  ₹{book.price * 2}
+                  ₹{2499 * quantity}
                 </span>
                 <span className="text-xs font-extrabold text-red-600 bg-red-50 px-2 py-0.5 rounded">
-                  (50% OFF)
+                  (32% OFF)
                 </span>
               </div>
 
