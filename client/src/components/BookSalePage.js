@@ -49,12 +49,12 @@ export default function BookSalePage() {
   const navigate = useNavigate();
   // Dummy Book Details
   const book = {
-    title: "HO'OPONOPONO: The Art of Forgiveness",
+    title: "HO'OPONOPONO: The Healing Power of Forgiveness",
     author: "Soniya Pachauri",
     price: bookPrice, // In INR
     image: "../../images/book.webp",
     description:
-      "The Healing Power of Forgiveness, Inner Peace & Self - Transformation with Forgiveness - A Prayer Guide, Release the past. Heal your heart, Transform your life.",
+      "Release the past. Heal your heart. Transform your life. Learn the ancient Hawaiian healing practice of Ho'oponopono through powerful forgiveness prayers, healing exercises, affirmations and practical techniques. Heal emotional wounds, improve relationships, cultivate self-love and experience lasting inner peace-one prayer at a time.",
   };
 
   const handleInputChange = (e) => {
@@ -99,7 +99,7 @@ export default function BookSalePage() {
       amount: order.data.amount,
       currency: "INR",
       name: "Soniya Pachauri",
-      description: "Ho'oponopono: The Art of Forgiveness",
+      description: "Ho'oponopono: The Healing Power of Forgiveness",
       image: "/logo.png",
       order_id: order.data.id,
       handler: function (response) {
