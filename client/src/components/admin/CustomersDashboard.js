@@ -270,7 +270,7 @@ const CustomersDashboard = () => {
                           {customer.name}
                         </h4>
                         <span className="text-xs text-gray-400">
-                          {customer.date}
+                          {formatDate(customer.date)}
                         </span>
                       </div>
                     </div>
