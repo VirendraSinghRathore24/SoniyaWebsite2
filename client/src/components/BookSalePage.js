@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import baseUrl from "../baseUrl";
 import { addDoc, collection } from "firebase/firestore";
