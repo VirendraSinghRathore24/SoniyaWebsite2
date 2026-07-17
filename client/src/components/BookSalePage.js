@@ -159,7 +159,165 @@ export default function BookSalePage() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 antialiased">
       {/* Product Card */}
-      <div className="max-w-4xl w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+      <div className="max-md:hidden max-w-4xl w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+        {/* Left Column: Book Cover Image */}
+        <div className="w-full md:w-1/2 h-80 md:h-auto min-h-[450px] relative">
+          <div>
+            <img
+              src={book.image}
+              alt={book.title}
+              className=" inset-0 w-full h-full object-cover"
+            />
+          </div>
+          {/* "What You'll Learn" Section */}
+          <div className="p-6 mt-10">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[#A66E28] text-lg">✨</span>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
+                What You'll Learn
+              </h3>
+              <div className="h-[1px] bg-gray-100 flex-grow ml-2" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-gray-700">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#A66E28] fill-[#A66E28]/10 shrink-0" />
+                <span>Heal emotional pain</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#A66E28] fill-[#A66E28]/10 shrink-0" />
+                <span>Practice forgiveness prayers</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#A66E28] fill-[#A66E28]/10 shrink-0" />
+                <span>Release past memories</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#A66E28] fill-[#A66E28]/10 shrink-0" />
+                <span>Build self-love & inner peace</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#A66E28] fill-[#A66E28]/10 shrink-0" />
+                <span>Improve relationships</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#A66E28] fill-[#A66E28]/10 shrink-0" />
+                <span>Daily exercises & affirmations</span>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 divide-x divide-orange-100 bg-amber-50/50 border border-amber-100/50 rounded-xl py-2 px-3 text-center mt-14">
+            <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-gray-800">
+              <Star className="h-4 w-4 text-[#A66E28] fill-[#A66E28]" />
+              <span>4.9/5 Reader Experience</span>
+            </div>
+            <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-gray-800">
+              <Users className="h-4 w-4 text-[#A66E28]" />
+              <span>Trusted by 1000+ Readers</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Detailed Content Section */}
+        <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="space-y-4">
+            {/* Best Seller/Guide Tag */}
+            <div className="inline-flex items-center gap-1.5 bg-[#C58B3A]/10 text-[#A66E28] px-3.5 py-1 rounded-lg font-bold text-xs uppercase tracking-wider">
+              <Star className="h-3.5 w-3.5 fill-[#A66E28] stroke-none" />
+              #1 Emotional Healing Guide
+            </div>
+
+            {/* Book Title & Author */}
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-950 leading-tight">
+                {book.title}
+              </h1>
+              <p className="text-sm font-medium text-gray-500 mt-1">
+                By{" "}
+                <span className="text-[#A66E28] font-semibold">
+                  {book.author}
+                </span>
+              </p>
+            </div>
+
+            {/* Description */}
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              {book.description}
+            </p>
+
+            {/* Trust Banner (4.9 Rating & Total Readers) */}
+          </div>
+
+          {/* Pricing, Quantity Selector & Action CTA */}
+          <div className="mt-6 pt-4 border-t border-gray-50 space-y-4">
+            <div className="flex items-center justify-between">
+              {/* Discounted Pricing Block */}
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-black text-gray-950">
+                  ₹{book.price}
+                </span>
+                <span className="text-sm text-gray-400 line-through">
+                  ₹{2499 * quantity}
+                </span>
+                <span className="text-xs font-extrabold text-red-600 bg-red-50 px-2 py-0.5 rounded">
+                  (32% OFF)
+                </span>
+              </div>
+
+              {/* Micro Quantity Dropdown */}
+              <div className="flex items-center gap-1.5">
+                <span className="text-xs font-semibold text-gray-500">
+                  Qty:
+                </span>
+                <select
+                  id="quantity"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Number(e.target.value))}
+                  className="bg-gray-50 border border-gray-200 text-gray-800 font-semibold text-xs rounded-lg py-1.5 px-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition cursor-pointer"
+                >
+                  {[1, 2, 3, 4, 5].map((num) => (
+                    <option key={num} value={num}>
+                      {num}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Core Action Call-to-Action */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="w-full bg-[#0055FE] hover:bg-[#0042D1] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-blue-200 active:scale-98 transition duration-150 text-sm tracking-wide text-center"
+            >
+              Buy Now
+            </button>
+
+            {/* Three Trust Badges Footer */}
+            <div className="grid grid-cols-3 gap-2 pt-2 text-[10px] sm:text-xs text-gray-500 text-center">
+              <div className="flex flex-col items-center gap-1">
+                <Truck className="h-5 w-5 text-[#A66E28]" />
+                <span className="font-semibold leading-tight text-gray-800">
+                  Pan India Delivery
+                </span>
+              </div>
+              <div className="flex flex-col items-center gap-1 border-x border-gray-100">
+                <ShieldCheck className="h-5 w-5 text-[#A66E28]" />
+                <span className="font-semibold leading-tight text-gray-800">
+                  100% Secure Payment
+                </span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <Award className="h-5 w-5 text-[#A66E28]" />
+                <span className="font-semibold leading-tight text-gray-800">
+                  Premium Quality Content
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:hidden max-w-4xl w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
         {/* Left Column: Book Cover Image */}
         <div className="w-full md:w-1/2 h-80 md:h-auto min-h-[450px] relative">
           <img
