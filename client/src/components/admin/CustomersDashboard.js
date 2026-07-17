@@ -79,7 +79,7 @@ const CustomersDashboard = () => {
     window.scrollTo(0, 0);
     const authStatus = localStorage.getItem("auth");
     if (authStatus !== "Logged In") {
-      window.location.href = "/login"; // Redirect to login page if not logged in
+      window.location.href = "/admin/login"; // Redirect to login page if not logged in
     }
   }, []);
 
