@@ -35,7 +35,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 w-full transition-all">
       {/* 1. Subtle, High-Conversion Top Announcement Banner */}
-      <div className="bg-gradient-to-r from-[#A66E28] via-[#C58B3A] to-[#A66E28] text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
+      {/* <div className="bg-gradient-to-r from-[#A66E28] via-[#C58B3A] to-[#A66E28] text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 font-medium">
           <Calendar className="h-4 w-4 shrink-0 opacity-90" />
           <span>Upcoming Session on 15 March</span>
@@ -46,7 +46,7 @@ function Header() {
             Register Now <ArrowRight className="h-3 w-3" />
           </Link>
         </div>
-      </div>
+      </div> */}
 
       {/* 2. Main Navigation Bar */}
       <div className="w-full bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
